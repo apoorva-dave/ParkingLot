@@ -1,5 +1,9 @@
 import Vehicle
 import argparse
+import sys
+
+if sys.version_info[0] == 2:
+	input = raw_input
 
 class ParkingLot:
 	def __init__(self):
@@ -96,7 +100,7 @@ class ParkingLot:
 			leave_slotid = int(line.split(' ')[1])
 			status = self.leave(leave_slotid)
 			if status:
-				print('Slot number ',leave_slotid,' is free')
+				print('Slot number '+str(leave_slotid)+' is free')
 
 		elif line.startswith('status'):
 			self.status()
